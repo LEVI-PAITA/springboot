@@ -31,6 +31,7 @@ class ApplicationTests {
     @LocalServerPort
     int randomServerPort;
 
+    /*PRUEBAS UNITARIAS*/
     
     @Test
     @Order(1)
