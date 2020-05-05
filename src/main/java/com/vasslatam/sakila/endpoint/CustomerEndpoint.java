@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -119,5 +120,14 @@ public class CustomerEndpoint {
     public ResponseEntity<?> delete(@PathVariable Integer id){
         customerService.delete(id);
         return ResponseEntity.ok(id);
+    }
+    
+    @GetMapping("/by-customer")
+    public List<Object[]> findByCustomerAddress(@RequestParam("customer") String customer,
+                                                @RequestParam("address") String address,
+                                                @RequestParam("store") Integer store)
+    {
+        List<Object[]> customeraddress = customerService.findbycustomeraddress(customer, address,store);
+        return customeraddress;
     }
 }

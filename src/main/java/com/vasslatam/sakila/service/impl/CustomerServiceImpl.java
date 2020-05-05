@@ -64,8 +64,14 @@ public class CustomerServiceImpl implements CustomerService{
         customer.setLastName(lastName);
         customer.setEmail(email);
         customer.setAddress(address);
-        
+        customer.setLastDate(LocalDateTime.now());
+        customer.setCreateDate(LocalDateTime.now());
         return customerRepository.save(customer);
+    }
+
+    @Override
+    public List<Object[]> findbycustomeraddress(String firstname, String address, Integer store) {
+        return customerRepository.findbycustomeraddress(firstname, address, store);
     }
     
 }

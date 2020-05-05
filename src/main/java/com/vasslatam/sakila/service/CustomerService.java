@@ -31,4 +31,6 @@ public interface CustomerService {
     Customer create(Store store, String firtName,String lastName,String email, Address address);
     
     public void delete(Integer id);
+    
+    public List<Object[]> findbycustomeraddress(String firstname, String address, Integer store);
 }
