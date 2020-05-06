@@ -123,11 +123,11 @@ public class CustomerEndpoint {
     }
     
     @GetMapping("/by-customer")
-    public List<Object[]> findByCustomerAddress(@RequestParam("customer") String customer,
+    public List<Customer> findByCustomerAddress(@RequestParam("customer") String customer,
                                                 @RequestParam("address") String address,
                                                 @RequestParam("store") Integer store)
     {
-        List<Object[]> customeraddress = customerService.findbycustomeraddress(customer, address,store);
+        List<Customer> customeraddress = customerService.findbycustomeraddress(customer, address,store);
         return customeraddress;
     }
 }

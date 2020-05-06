@@ -70,7 +70,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public List<Object[]> findbycustomeraddress(String firstname, String address, Integer store) {
+    public List<Customer> findbycustomeraddress(String firstname, String address, Integer store) {
         return customerRepository.findbycustomeraddress(firstname, address, store);
     }
     

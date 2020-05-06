@@ -32,5 +32,5 @@ public interface CustomerService {
     
     public void delete(Integer id);
     
-    public List<Object[]> findbycustomeraddress(String firstname, String address, Integer store);
+    public List<Customer> findbycustomeraddress(String firstname, String address, Integer store);
 }
