@@ -40,7 +40,7 @@ public class CountryEndpoint {
     @Autowired
     private CountryService countryService;
         
-    @GetMapping("/country")
+    @GetMapping("/countrys")
     public List<Country> index(){
         return countryService.findAll();
     }
